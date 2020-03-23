@@ -1,30 +1,34 @@
 // Ask for length
-var passwordLength = Number(prompt('Choose a length between 8 and 128 characters.'));
+var passwordLength = parseInt(prompt('Choose a length between 8 and 128 characters.'));
 
 var inputNum = confirm ('Would you like to include numbers?');
-var inputALHPA = confirm ('Would you like to include uppercase letters?');
-var inputAplhaL = confirm ('Would you like to include lowercase letters?');
+var inputUpper = confirm ('Would you like to include uppercase letters?');
+var inputLower = confirm ('Would you like to include lowercase letters?');
 var inputSpecial = confirm ('Would you like to include special characters?');
 
-var num = [0, 1, 2, 3, 4, 4, 5, 6, 7, 8, 9]
-var alphaUpper = []
+
+var arrUpper = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ'].split("");
+var arrLower = ['abcdefghijklmnopqrstuvwxyz'].split("");
+var specChar = ['~!@#$%^&*?><'].split("");
+
 //for loop adding one of each category to the pswrd array until it meets the specified length
 
-function password (passwordLength){
-  var pswrd = [];
   for (var i = 0; i <= passwordLength; i ++){ 
+    var pswrd = [];
       if (inputNum = true) {
-        var numbers = Math.floor(Math.random()*9);
-        pswrd.push(numbers);
+        pswrd.push(Math.floor(Math.random()*9));
       }
-      if (inputALPHA = true) {
-        var upperCase = ['A', 'B', 'C', 'D', 'E', 'F'];
-        var bigLetters = upperCase[Math.floor(Math.random()*upperCase.length)];
-        pswrd.push(bigLetters);
+      if (inputUpper = true) {
+        pswrd.push(alphaUpper[Math.floor(Math.random()*aplhaUpper.length)]);
       }
-
+      if (inputLower = true) {
+        pswrd.push(alphaLower[Math.floor(Math.random()*aplhaLower.length)]);
+      }
+      if (inputSpecial = true) {
+        pswrd.push(special[Math.floor(Math.random()*special.length)]);
+      }
   }
-}
+
 //shuffle the final array to generate the password
 
 
